@@ -40,7 +40,7 @@ std::unordered_map<char, int> tool::piece_activity =
 
 const int tool::cross_river_power = 10;
 
-const int tool::first_move_j_power = 5;
+const int tool::first_move_j_power = 10;
 
 cma::ChessMovesAnalyze<std::string>* tool::Cma = nullptr;
 
