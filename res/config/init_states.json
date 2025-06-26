@@ -1,0 +1,28 @@
+{
+  "hp": 10000,
+  "xp": 0,
+  "level": 1,
+  "coin": 0,
+  "talent": 0,
+  "cards": [
+    [ "common", "basic", 27 ],
+    [ "common", "antennae", 98 ],
+    [ "common", "bone", 42 ],
+    [ "unusual", "basil", 61 ],
+    [ "unusual", "bandage", 15 ],
+    [ "rare", "battery", 76 ],
+    [ "rare", "air", 19 ],
+    [ "rare", "amulet", 100 ],
+    [ "epic", "ankh", 44 ],
+    [ "epic", "bandage", 7 ],
+    [ "legendary", "basil", 88 ],
+    [ "legendary", "bone", 39 ],
+    [ "mythic", "ant_egg", 65 ],
+    [ "mythic", "air", 31 ],
+    [ "ultra", "antennae", 90 ],
+    [ "super", "battery", 58 ],
+    [ "super", "ankh", 26 ],
+    [ "super", "amulet", 73 ],
+    [ "unique", "bandage", 1 ]
+  ]
+}
