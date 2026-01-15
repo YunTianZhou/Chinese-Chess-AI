@@ -1,6 +1,6 @@
 # P0001 Prooooooooooo!
 
-Scifish and Tim are friends, they really like to argue about who is the pro. Interestingly, they all firmly believe that the other is.
+Scifish and Tim are friends, they really like to argue about who is pro. Interestingly, they all firmly believe that the other is.
 
 This is how their chat looks like:
 ```
@@ -110,3 +110,4 @@ No
 ### Explanation
 
 No matter how Scifish divide the messages, the total reliability score is at most $-1$, which is less than $0$. Therefore, output `No`.
+
