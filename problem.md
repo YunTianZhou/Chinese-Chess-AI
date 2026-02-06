@@ -9,7 +9,7 @@ Scifsh interviewed some people on the street. Some of them are Scifsh’s friend
 For example:
 
 ```
-Alice: If I am noob, them scifish is pro.
+Alice: If I am noob, then Scifish is pro.
 ```
 
 It is guaranteed that **every person mentioned in the opinions was also interviewed**.
