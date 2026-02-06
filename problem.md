@@ -89,7 +89,7 @@ or
 noob
 ```
 
-representing the role of person `i`.
+representing the role of person $i$.
 
 Any valid solution is accepted.
 
