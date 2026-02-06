@@ -1,113 +1,189 @@
-# P0001 Prooooooooooo!
+# P0002 Who is pro
 
-Scifish and Tim are friends, they really like to argue about who is pro. Interestingly, they all firmly believe that the other is.
+Scifish and Tim have always argued about who is the true pro, but they could never reach an agreement. One day, Scifish decided to interview other people on the street to gather opinions.
 
-This is how their chat looks like:
+Scifsh interviewed some people on the street. Some of them are Scifsh’s friends, some are Tim’s friends, and some he doesn’t know at all. In order to avoid offending anyone, each interviewee chose to compare only themselves with their best friends, and gave some opinions in the following form:
+
+> If I am `<pro|noob>`, then `<friend_name>` is `<pro|noob>`.
+
+For example:
+
 ```
-scifish: prooooooooooooo
-tim: u prooooooooooo
-scifish: me noob
-scifish: ur proooooooooooooo
-...
+Alice: If I am noob, them scifish is pro.
 ```
 
-Scifish has been trying to prove that Tim is the pro, but Tim says what he said is absurd. Scifish have to find **reliable evidence** to prove that Tim is pro. Thus, he decided to look for evidence from their chat history. 
+It is guaranteed that **every person mentioned in the opinions was also interviewed**.
+
+Each person is either a **pro** or a **noob**.
+
+Determine whether it is possible that all of the following conditions hold simultaneously:
+- Scifish is a noob.
+- Tim is a pro.
+- All the opinions are true.
+
+If it is possible, output a valid assignment labeling every person as either **pro** or **noob**.
 
 ## Problem Description
 
-There are $N$ lines of message $S_1, S_2, ..., S_N$, every message is about saying the other is pro. 
+There are $N$ people numbered from $1$ to $N$, person $1$ is Scifish, and person $N$ is Tim.
 
-- If $S_i$ is `Scifish`, it is sent by Scifish.
-- If $S_i$ is `Tim`, it is sent by Tim.
+There are $M$ opinions, the i-th opinion has the form:
 
-Scifish need to divide these messages in to **consecutive** chunks, such that each chunk satisfied the following conditions:
+> If person $A_i$ is $X_i$, then person $B_i$ is $Y_i$
 
--  Scifish has sent at least one message.
-- Tim has sent at least one message.
-
-Each chunk will receive a reliability score.
-
-- `1` If the last message is sent by scifish
-- `-1` If the last message is sent by Tim
-
-The total reliability score is the sum of each chunk.
-
-Tim will believe he is pro if Scifish found a valid division such that its total reliability score is greater than or equal to $K$.
-
-Is it possible for Scifish to make Tim believe that he is pro？
+Where $X_i$ and $Y_i$ are either `pro` or `noob`.
 
 ## Constraints
 
-- $2 \le N \le 67^4$
-- $0 \le K \le N$
-- $S_i$ is either `Scifish` or `Tim`. $(1 \le i \le N)$
-- There exist at least one `Scifish` among $S_i$. $(1 \le i \le N)$
-- There exist at least one `Tim` among $S_i$. $(1 \le i \le N)$
+- $3 \le N \le 67^3$
+- $0 \le M \le 676767$
+- $1 < A_i < N$ $(1 \le i \le M)$
+- $1 < B_i < N$ $(1 \le i \le M)$
+- $A_i \ne B_i$ $(1 \le i \le M)$
+- $X_i$ is either `pro` or `noob`. $(1 \le i \le M)$
+- $Y_i$ is either `pro` or `noob`. $(1 \le i \le M)$
+
+### Subtasks
+
+| Subtask | Constraints / Properties |
+|---------|--------------------------|
+| 1 | $N \le 20,\ M \le 50$ |
+| 2 | There exists exactly one $i$ such that $A_i = i$, where $1 < i < N$ |
+| 3 | For each $1 \le i \le M$, there must exist at least one $1 \le j \le M$, such that:<ul><li>$A_i = A_j$</li><li>$B_i = B_j$</li><li>$X_i \ne X_j$</li><li>$Y_i \ne Y_j$</li></ul> |
+| 4 | $N \le 3000,\ M \le 3000$ |
+| 5 | No additional constraints |
 
 ## Input Specification
 
 ```
-N K
-S_1
-S_2
+N M
+A_1 X_1 B_1 Y_1
+A_2 X_2 B_2 Y_2
 ...
-S_N
+A_M X_M B_M Y_M
 ```
 
 ## Output Specifications
 
-If it is possible to make Tim believe he is pro, output `Yes`, otherwise output `No`.
+If it is impossible, output:
+
+```
+Impossible
+```
+
+Otherwise, output:
+
+```
+Possible
+```
+
+followed by N lines, where the i-th line is either:
+
+```
+pro
+```
+
+or
+
+```
+noob
+```
+
+representing the role of person i.
+
+Any valid solution is accepted.
 
 ## Example 1
 
 ### Input
 
 ```
-5 1
-Scifish
-Tim
-Scifish
-Tim
-Scifish
+3 1
+2 pro 3 noob
 ```
 
 ### Output
 
 ```
-Yes
+POSSIBLE
+noob
+noob
+pro
 ```
 
 ### Explanation
 
-Divide the message as following:
-
-- $S_1,\ S_2,\ S_3$
-- $S_4,\ S_5$
-
-The total reliability score is $2$, which is greater than $1$. Therefore, output `Yes`.
+Note that person $2$ cannot be pro, otherwise according to the first opinion, person $1$ (Tim) must be noob, which doesn't met the question's condition.
 
 ## Example 2
 
 ### Input
 
 ```
-7 0
-Scifish
-Scifish
-Scifish
-Tim
-Scifish
-Tim
-Tim
+3 2
+2 noob 1 pro
+2 pro 3 noob
 ```
 
 ### Output
 
 ```
-No
+IMPOSSIBLE
 ```
 
 ### Explanation
 
-No matter how Scifish divide the messages, the total reliability score is at most $-1$, which is less than $0$. Therefore, output `No`.
+- If person $2$ is noob, person $1$ (Scifish) must be pro, which violates the problem's condition.
 
+- If person $2$ is pro, person $3$ (Tim) must be noob, which violates the problem's condition.
+
+Therefore, person $2$ can neither be a pro or noob, which is impossible.
+
+## Example 3
+
+### Input
+
+```
+5 3
+2 noob 3 pro
+3 noob 5 pro
+2 pro 5 noob
+4 pro 3 pro
+```
+
+### Output
+
+```
+POSSIBLE
+noob
+noob
+pro
+noob
+pro
+```
+
+### Explanation
+
+Note that person $4$ can also be a pro.
+
+## Example 4
+
+### Input
+
+```
+4 3
+2 noob 3 pro
+2 pro 3 noob
+3 noob 2 noob
+3 pro 2 pro
+```
+
+### Output
+
+```
+IMPOSSIBLE
+```
+
+### Explanation
+
+No matter how to label person $2$ and person $3$, there will always be contradiction between opinions.
