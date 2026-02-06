@@ -105,7 +105,7 @@ Any valid solution is accepted.
 ### Output
 
 ```
-POSSIBLE
+Possible
 noob
 noob
 pro
@@ -128,7 +128,7 @@ Note that person $2$ cannot be pro, otherwise according to the first opinion, pe
 ### Output
 
 ```
-IMPOSSIBLE
+Impossible
 ```
 
 ### Explanation
@@ -154,7 +154,7 @@ Therefore, person $2$ can neither be a pro or noob, which is impossible.
 ### Output
 
 ```
-POSSIBLE
+Possible
 noob
 noob
 pro
@@ -181,7 +181,7 @@ Note that person $4$ can also be a pro.
 ### Output
 
 ```
-IMPOSSIBLE
+Impossible
 ```
 
 ### Explanation
