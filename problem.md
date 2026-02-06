@@ -48,7 +48,7 @@ Where $X_i$ and $Y_i$ are either `pro` or `noob`.
 | Subtask | Constraints / Properties |
 |---------|--------------------------|
 | 1 | $N \le 20,\ M \le 50$ |
-| 2 | There exists exactly one $j$ such that $A_i = j$, where $1 < j < N$ |
+| 2 | For each $1 < j < N$, there exists **exactly** one $i$ such that $A_i = j$ |
 | 3 | For each $1 \le i \le M$, there must exist at least one $1 \le j \le M$, such that:<ul><li>$A_i = A_j$</li><li>$B_i = B_j$</li><li>$X_i \ne X_j$</li><li>$Y_i \ne Y_j$</li></ul> |
 | 4 | $N \le 3000,\ M \le 3000$ |
 | 5 | No additional constraints |
